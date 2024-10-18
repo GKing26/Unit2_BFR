@@ -1,0 +1,17 @@
+>--- Question 1
+     I will loop through the list of animals in the river, however collision will be handled inside redraw_cells because you need to know where you are going which is inside the the river class and it will also determine if you should move or not. I also think loss of life should be handled in redraw because if they move without hitting anything they will starve. Along with that I think losing live in general should be in the bears consume and starve actions, that will single out the bears and make sure they lose live naturally anyway
+
+>--- Question 2
+     River.place_baby will be adding to the population and appending to self.animals, along with plopping down the babies randomly along the board. the death function however will do the opposite, decreasing the population, plucking the animal from the animal list, and making the tile that the animal was in into an empty water tile
+
+>--- Question 3
+     animal.collision should call the bears actions depending on what is hit like consume that will call the consumed animals death action or starve that will eventually call the bears own death action. The death action will call the river's own death action to remove the animal from the river
+
+>--- Question 4
+     Bear.starve will increase the amount of days it has starved, if that continues it will call the animals death action. if the bear consumes something then that amount of days starved will go to zero, this variable is being compared to max_lives and lives in both actions are being ticked down. Also I did not add the eaten_today variable because there are too many fish and the bears can get chunky if they want, I will let them be very well fed bears. Also because the only way they eat more than once is if a fish runs into a bear, so its the fishes fault, take it up with the bear lawyers.
+
+>--- Question 5
+     <-- Part 1
+         The river array should change where the animal is and it should fill int he space behind it to be water, I have it so if a bear takes a fish then the space where the fish was will be filled with water after that then the bear moves, to make sure we don't have poofing bears
+     <-- Part 2
+         So I don't think you should change where they are, they should not move and if any of the animals have breed they should not move. I don't really have a reason, its easier and I think it makes more sense.  
